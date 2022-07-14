@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" style="background: antiquewhite">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor Schedule</title>
+    <style>
+         table, th , td {
+            border: 1px solid black;
+         }
+    </style>
+</head>
+<body>
+<h1 align="center" style="font-family: 'Baskerville Old Face',cursive; font-size: 45px">Time Schedule for Dr. {{ name }}</h1>
+    <table border="3" bordercolor="#191970" cellpadding="9" align="center" style="font-size: 24px; font-family: 'Baskerville Old Face',cursive;" bgcolor="#deb887" width="750">
+        <tr>
+            <th>Day</th>
+            <th>From</th>
+            <th>To</th>
+        </tr>
+
+        {% if schedule %}
+            {% for item in schedule %}
+                <tr>
+                    <td>{{ item.day }}</td>
+                    <td>{{ item.start }}</td>
+                    <td>{{ item.end }}</td>
+                </tr>
+            {% endfor %}
+
+        {% endif %}
+    </table>
+</body>
+</html>
